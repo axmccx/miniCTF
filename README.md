@@ -1,10 +1,8 @@
 # MINICTF
 
-### A platform build in django for hosting CTF events. 
+### A platform build in django for hosting CTF events.
 
-#### Live demo 
-
-[https://xyz-minictf.herokuapp.com/](https://xyz-minictf.herokuapp.com/)
+...With my own changes from the original project.
 
 #### FEATURES :
 

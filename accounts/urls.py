@@ -1,12 +1,12 @@
 from django.urls import path, include, re_path
 from . import views as manual_views
-from django.contrib.auth import views
+from django.contrib.auth import views as auth_views
 from . import forms
 
 urlpatterns = [
 	path('', manual_views.redirect, name="redirect"),
-	path('login/', views.login, {'template_name':'login/login.html','authentication_form':forms.LoginForm}),
-	path('logout/', views.logout, {'next_page':'/'}, name="logout"),
+	path('login/', auth_views.LoginView.as_view(template_name='login/login.html', authentication_form=forms.LoginForm), name="login"),
+	path('logout/', auth_views.LogoutView.as_view(next_page='/'), name="logout"),
 	path('register/', manual_views.register, name="register"),
 	path('profile/', manual_views.profile, name="profile"),
 	path('team/', manual_views.team_view, name="team_view"),
