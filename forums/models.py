@@ -15,6 +15,8 @@ class Threads(models.Model) :
 	description = models.TextField()
 	files = models.FileField(upload_to=get_upload_path_question, blank=True, null=True)
 	score = models.IntegerField(default=0)
+	class Meta:
+		verbose_name_plural = "Threads"
 
 class Answers(models.Model) :
 	answer_on = models.ForeignKey('Threads', on_delete=models.CASCADE)
@@ -23,3 +25,6 @@ class Answers(models.Model) :
 	answer = models.TextField(default="")
 	answer_files = models.FileField(upload_to=get_upload_path_answer, blank=True, null=True)
 	score = models.IntegerField(default=0)
+	class Meta:
+		verbose_name_plural = "Answers"
+	

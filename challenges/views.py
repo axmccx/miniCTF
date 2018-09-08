@@ -41,22 +41,28 @@ def index(request) :
 	challenge_info_web_object = []
 	challenge_info_crypto_object = []
 	for c in challenge :
-		if c.category == 'Stegnography' :
+		# if c.category == 'Stegnography' :  
+		if c.category == '10.11.1.95' :
 			s = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_stego_object.append(s)
-		elif c.category == 'Reverse Engineering' :
+		# elif c.category == 'Reverse Engineering' :  
+		elif c.category == '10.11.1.87' :
 			re = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_re_object.append(re)
-		elif c.category == 'Forensics' :
+		# elif c.category == 'Forensics' :  
+		elif c.category == '10.11.1.66' :
 			f = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_for_object.append(f)
-		elif c.category == 'Pwning' :
+		# elif c.category == 'Pwning' :  
+		elif c.category == '10.11.1.73' :
 			p = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_pwn_object.append(p)
-		elif c.category == 'Web' :
+		# elif c.category == 'Web' :  
+		elif c.category == '10.11.1.113' :
 			w = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_web_object.append(w)
-		elif c.category == 'Cryptography' :
+		# elif c.category == 'Cryptography' :
+		elif c.category == '10.11.1.51' :
 			cy = PassInsideView(c.name, assignID(c.name), c.category, c.description, c.points, c.file, c.flag, c.author)
 			challenge_info_crypto_object.append(cy)
 

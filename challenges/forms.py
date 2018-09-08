@@ -1,18 +1,27 @@
 from django import forms
 from . import models
 
-category_list = [
-	('Cryptography','Cryptography'),
-	('Forensics','Forensics'),
-	('Pwning','Pwning'),
-	('Reverse Engineering','Reverse Engineering'),
-	('Stegnography','Stegnography'),
-	('Web','Web')
+# category_list = [
+# 	('Cryptography','Cryptography'),
+# 	('Forensics','Forensics'),
+# 	('Pwning','Pwning'),
+# 	('Reverse Engineering','Reverse Engineering'),
+# 	('Stegnography','Stegnography'),
+# 	('Web','Web')
+# ]
+
+servers= [
+	('10.11.1.51','10.11.1.51'),
+	('10.11.1.66','10.11.1.66'),
+	('10.11.1.73','10.11.1.73'),
+	('10.11.1.87','10.11.1.87'),
+	('10.11.1.95','10.11.1.95'),
+	('10.11.1.113','10.11.1.113')
 ]
 
 class AddChallengeForm(forms.ModelForm) :
 	name = forms.CharField(max_length=250, label="Challenge Name *", widget=forms.TextInput(attrs={'placeholder':'Challenge Name','class':'form-control'}))
-	category = forms.CharField(widget=forms.Select(choices=category_list, attrs={'class':'form-control'}), label="Challenge Category *")
+	category = forms.CharField(widget=forms.Select(choices=servers, attrs={'class':'form-control'}), label="Challenge Category *")
 	description = forms.CharField(max_length=1000, widget=forms.TextInput(attrs={'placeholder':'Challenge Description', 'class':'form-control','required':'false'}), label="Challenge Description *", required=False)
 	points = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'form-control'}), label="Challenge Points *")
 	file = forms.FileField(label="Challenge Files (if any)", required=False)

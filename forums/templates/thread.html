@@ -37,7 +37,8 @@
 				<div id="thread_{{ thread.id }}" class="threads">
 					<div class="topThread">
 						<p>
-							<a href="{{ thread.id }}">{{ thread.topic }}</a> <span style="float: right;">Score: {{ thread.score }}</span>
+							<!-- <a href="{{ thread.id }}">{{ thread.topic }}</a> <span style="float: right;">Score: {{ thread.score }}</span> -->
+							<a href="{{ thread.id }}">{{ thread.topic }}</a> 
 						</p>
 					</div>
 					<div class="descriptionThread">
@@ -56,11 +57,11 @@
 		<div id="allThreads">
 			{% for answer in answers %}
 				<div id="answer_{{ answer.id }}" class="threads">
-					<div class="topThread">
+					<!-- <div class="topThread">
 						<p>
 							<span style="float: right;">Score: {{ answer.score }}</span>
 						</p>
-					</div>
+					</div> -->
 					<div class="descriptionThread">
 						<p>{{ answer.answer}}</p>
 					</div>

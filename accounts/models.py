@@ -8,3 +8,5 @@ class Teams(models.Model) :
 	job = models.CharField(max_length=100, null=True, default="")
 	company = models.CharField(max_length=250, null=True, default="")
 	points = models.IntegerField(default=0)
+	class Meta:
+		verbose_name_plural = "Teams"
